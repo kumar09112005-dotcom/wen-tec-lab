@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* TOP MENU */
+.top-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #1f2937;
+}
+
+.top-nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+
+.home-icon img {
+    width: 26px;
+    filter: invert(1);
+}
+
+/* MAIN */
+.main {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    height:350px;
+    background-color: #f97316;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 40px;
+    
+}
+h1 {
+      text-align: center;
+    }
+
+    form {
+      width: 600px;
+      margin: auto;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 5px;
+      margin-bottom: 15px;
+      align-items: center;
+    }
+
+    
+
+   
+
+    textarea {
+      width: 100%;
+      height: 80px;
+    }
+
+    .center {
+      text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+    <a href="page.html" class="home-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png">
+    </a>
+    <a href="contacts.html">Contact</a>
+    <a href="#">News</a>
+    <a href="#">Help</a>
+    <a href="login.html">Register</a>
+</nav>
+
+<div class="main">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <a href="page.html">Home</a>
+        <a href="contacts.html">Contact</a>
+        <a href="news.html">News</a>
+        <a href="calculator.html">calculator</a>
+        <a href="#">Intrest</a>
+     
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <h1>Student Registration Form</h1>
+<form>
+
+  <div class="form-row">
+    <label>Roll No:</label>
+    <input type="number" required>
+  </div>
+
+  <div class="form-row">
+    <label>Student Name:</label>
+    <div >
+      <input type="text" placeholder="First Name" required>
+      <input type="text" placeholder="Last Name" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>Father Name:</label>
+    <input type="text" required>
+  </div>
+
+  <div class="form-row">
+    <label>Date of Birth:</label>
+    <div>
+      <input type="number" placeholder="DD" min="1" max="31">
+      <input type="number" placeholder="MM" min="1" max="12">
+      <input type="number" placeholder="YYYY" min="1900" max="2025">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>Mobile Number:</label>
+    <div>
+      <input type="text" value="+91" readonly style="width:50px;">
+      <input type="tel" pattern="[0-9]{10}" placeholder="10 digits" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>Email:</label>
+    <input type="email" required>
+  </div>
+
+  <div class="form-row">
+    <label>Password:</label>
+    <input type="password" required>
+  </div>
+
+  <div class="form-row">
+    <label>Gender:</label>
+    <div>
+      <input type="radio" name="gender"> Male
+      <input type="radio" name="gender"> Female
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>Department:</label>
+    <div>
+      <input type="checkbox"> CSE
+      <input type="checkbox"> IT
+      <input type="checkbox"> ECE
+      <input type="checkbox"> Civil
+      <input type="checkbox"> Mech
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>Course:</label>
+    <select required>
+      <option value="">-- Select Course --</option>
+      <option>B.Tech</option>
+      <option>MCA</option>
+      <option>MBA</option>
+      <option>B.Sc</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label>Student Photo:</label>
+    <input type="file" accept="image/*" required>
+  </div>
+
+  <div class="form-row">
+    <label>City:</label>
+    <input type="text" required>
+  </div>
+
+  <div class="form-row">
+    <label>Address:</label>
+    <textarea placeholder="Enter full address"></textarea>
+  </div>
+
+  <div class="center">
+    <input type="submit" value="Register">
+  </div>
+
+</form>
+    </div>
+
+</div>
+</body>
+</html>

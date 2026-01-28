@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+	font-size:18px;
+}
+
+body{
+	
+	height:100vh;
+         padding:10px;
+         margin:10px;
+	width:100vw;
+	font-family: sans-serif;
+}.top-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #1f2937;
+}
+
+.top-nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+
+.home-icon img {
+    width: 26px;
+    filter: invert(1);
+}
+
+/* MAIN */
+.main {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    height:350px;
+    background-color: #f97316;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+}
+
+.container{
+	margin:auto;
+	border: solid transparent;
+	border-radius:5px;
+	padding:15px;
+	display:flex;
+	flex-direction:column;
+	background-color:aliceblue;
+	height:fit-content;
+	width:fit-content;
+}
+.calresult{
+	width:100%;
+	height:50px;
+	margin-bottom:10px;
+	font-size:18px;
+}
+
+button:hover{
+	background-color:lightblue;
+}
+
+.cal_option{
+	display:grid;
+        padding:10px;
+	grid-template-columns: repeat(4,50px);
+	grid-template-rows:repeat(5,50px);
+	gap:15px;
+}
+.cent{
+text_align:center;
+}
+</style>
+</head>
+
+<body>
+<nav class="top-nav">
+    <a href="page.html" class="home-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png">
+    </a>
+    <a href="contacts.html">Contact</a>
+    <a href="#">News</a>
+    <a href="#">Help</a>
+    <a href="login.html">Register</a>
+</nav>
+
+<div class="main">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <a href="page.html">Home</a>
+        <a href="contacts.html">Contact</a>
+        <a href="news.html">News</a>
+        <a href="calculator.html">calculator</a>
+        <a href="#">Intrest</a>
+        
+        
+    </div>
+    <div class="content">
+       <h1 class="cent" ><b>CALCULATOR</b><h1>
+
+      <div class="container">
+		<input class="calresult" type="text" id="result" disabled>
+		<div class="cal_option">
+                   </br>
+                   <button onClick="clearAll()">CE</button>
+		   <button onClick="clear()">C</button>
+                   <button onClick="append('+')">+</button>
+                   <button onClick="append('1')">1</button>
+		   <button onClick="append('2')">2</button>
+		   <button onClick="append('3')">3</button>
+		   <button onClick="append('/')">/</button>
+		   <button onClick="append('4')">4</button>
+		   <button onClick="append('5')">5</button>
+		   <button onClick="append('6')">6</button>
+		   <button onClick="append('*')">*</button>
+		   <button onClick="append('7')">7</button>
+		   <button onClick="append('8')">8</button>
+		   <button onClick="append('9')">9</button>
+		   <button onClick="append('-')">-</button>
+		   <button onClick="append('0')">0</button>
+      <button onClick="append('%')">%</button>
+       <button onClick="append('.')">.</button>
+      <button onClick="calculation()">=</button>
+		  
+		   
+
+		</div>
+	</div>
+	<script>
+               var result=document.getElementById("result");
+               function append(value){
+	            result.value+=value	
+
+               }
+               function clearAll(){
+	           result.value=""
+               }
+
+               function clear(){
+	           result.value=result.value.slice(0,-1);
+               }
+
+               function calculation(){
+	          let exp=document.getElementById("result").value;
+	          try{
+
+		       result.value=eval(exp);
+	          }
+	          catch{
+		      result.value="Error";
+
+	          }
+                }
+
+
+       </script>
+</div>
+
+</body>
+</html>

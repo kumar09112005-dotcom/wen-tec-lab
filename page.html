@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* TOP MENU */
+.top-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #1f2937;
+}
+
+.top-nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+
+.home-icon img {
+    width: 26px;
+    filter: invert(1);
+}
+
+/* MAIN */
+.main {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    height:350px;
+    background-color: #f97316;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+   
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 30px;
+    
+}
+p{
+text-align: right;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+    <a href="page.html" class="home-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png">
+    </a>
+    <a href="contacts.html">Contact</a>
+    <a href="#">History</a>
+    <a href="#">Help</a>
+    <a href="login.html">Register</a>
+
+</nav>
+
+<div class="main">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <a href="page.html">Home</a>
+        <a href="contacts.html">Contact</a>
+        <a href="news.html">News</a>
+        <a href="calculator.html">calculator</a>
+        <a href="#">Intrest</a>
+        
+               
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <h1>Welcome (Home Page)</h1>
+        <img src="download.jpeg" width="300" >
+        <p class="align">This is the HOME page.</p>
+    </div>
+
+</div>
+</body>
+</html>
