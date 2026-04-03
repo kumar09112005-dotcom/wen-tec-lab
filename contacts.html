@@ -9,8 +9,10 @@ body {
     margin: 0;
     font-family: sans-serif;
 }
-
-/* ---------- TOP HORIZONTAL MENU ---------- */
+*{
+	font-size:18px;
+}
+/* TOP MENU */
 .top-nav {
     display: flex;
     justify-content: space-around;
@@ -30,34 +32,84 @@ body {
     filter: invert(1);
 }
 
-/* ---------- MAIN LAYOUT ---------- */
+/* MAIN */
 .main {
     display: flex;
     height: calc(100vh - 60px);
 }
 
-/* ---------- LEFT VERTICAL MENU ---------- */
-.sidebar {
-    width: 200px;
-    background-color: #f97316;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+/* SIDEBAR */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  width: 180px;
+  height: 50%;
+  background-color: #f1f1f1;
 }
 
-.sidebar a {
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
 }
 
-/* ---------- CONTENT ---------- */
+/* Change the link and background color on hover */
+li a:hover {
+  background-color: #e7ae44;
+  color: white;
+}
+
+/* CONTENT */
 .content {
     flex: 1;
     padding: 40px;
-    text-align: center;
+    
+}
+
+.toolbar {
+  background: #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+  padding: 6px 12px;
+}
+
+#viewer {
+  padding: 10px;
+}
+
+
+.single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+.two {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 50px;
+}
+
+canvas {
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  cursor: pointer;
 }
 
 .content h1 {
@@ -67,6 +119,10 @@ body {
 .content img {
     width: 300px;
     margin-top: 20px;
+}
+.subnav{
+    font-family: "Times New Roman", Times, serif;
+      font-size: 8px;
 }
 </style>
 </head>
@@ -78,7 +134,7 @@ body {
         <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png">
     </a>
     <a href="contacts.html">Contact</a>
-    <a href="#">News</a>
+    <a href="#">History</a>
     <a href="#">Help</a>
     <a href="login.html">Register</a>
 </nav>
@@ -87,13 +143,21 @@ body {
 <div class="main">
 
     <!-- LEFT MENU -->
-    <div class="sidebar">
-        <a href="page.html">Home</a>
-        <a href="contacts.html">Contact</a>
-        <a href="#">News</a>
-        <a href="#">Help</a>
-        <a href="login.html">Register</a>
-    </div>
+   <ul>
+            <li><a href="page.html">Home</a></li>
+            <li><a href="contacts.html">Contact</a>
+                <ul class ="subnav">
+                    <li><a href="#">Mangers</a></li>
+                     <li><a href="#">Empolyees</a></li>
+                      <li><a href="#">Test Team</a></li>
+                </ul>
+            </li> 
+            <li><a href="news.html">News</a></li> 
+            <li><a href="#">History</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="calculator.html">calculator</a></li> 
+          <li><a href="tax.html">Tax</a></li>
+        </ul>
 
     <!-- CONTENT -->
     <div class="content">

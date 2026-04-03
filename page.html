@@ -9,6 +9,9 @@ body {
     margin: 0;
     font-family: sans-serif;
 }
+*{
+	font-size:18px;
+}
 
 /* TOP MENU */
 .top-nav {
@@ -35,33 +38,44 @@ body {
     display: flex;
     height: calc(100vh - 60px);
 }
-
-/* SIDEBAR */
-.sidebar {
-    width: 200px;
-    height:350px;
-    background-color: #f97316;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  width:180px;
+  height: 40%;
+  background-color: #f1f1f1;
 }
 
-.sidebar a {
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    text-align: center;
-   
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
 }
 
+/* Change the link and background color on hover */
+li a:hover {
+  background-color: #e7ae44;
+  color: white;
+}
 /* CONTENT */
 .content {
     flex: 1;
     padding: 30px;
     
 }
-p{
-text-align: right;
+
+.home-box {avbar like three dot
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.home-box p {
+    font-size: 16px;
+    line-height: 1.6;
 }
 </style>
 </head>
@@ -82,21 +96,31 @@ text-align: right;
 <div class="main">
 
     <!-- SIDEBAR -->
-    <div class="sidebar">
-        <a href="page.html">Home</a>
-        <a href="contacts.html">Contact</a>
-        <a href="news.html">News</a>
-        <a href="calculator.html">calculator</a>
-        <a href="#">Intrest</a>
-        
-               
-    </div>
+    
+        <ul>
+            <li><a href="page.html">Home</a></li>
+            <li><a href="contacts.html">Contact</a></li> 
+            <li><a href="news.html">News</a></li> 
+            <li><a href="#">History</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="calculator.html">calculator</a></li> 
+          <li><a href="tax.html">Tax</a></li>
+        </ul>
+    
 
     <!-- CONTENT -->
     <div class="content">
-        <h1>Welcome (Home Page)</h1>
-        <img src="download.jpeg" width="300" >
-        <p class="align">This is the HOME page.</p>
+        <h1><b>Welcome – Home Page</b></h1>
+
+    <div class="home-box">
+        <img src="main.jpg" width="300">
+
+        <p>
+            <b>HOME PAGE :</b><br>
+            This is the home page of the website.  
+            Here you can see the main overview and basic information.
+        </p>
+    </div>
     </div>
 
 </div>

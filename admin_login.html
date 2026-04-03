@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+*{
+	font-size:18px;
+}
+
+/* TOP MENU */
+.top-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #1f2937;
+}
+
+.top-nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+
+.home-icon img {
+    width: 26px;
+    filter: invert(1);
+}
+
+/* MAIN */
+.main {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* SIDEBAR */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  width: 180px;
+  height: 40%;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link and background color on hover */
+li a:hover {
+  background-color: #e7ae44;
+  color: white;
+}
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 🔥 center everything */
+}
+
+/* HEADING */
+.content h2 {
+    text-align: center;
+}
+
+/* FORM */
+.content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* INPUTS */
+.content form input[type="text"],
+.content form input[type="password"] {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+}
+
+/* SUBMIT BUTTON */
+.content form input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* REGISTER BUTTON */
+.register-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f97316;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top-nav">
+    <a href="page.html" class="home-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png">
+    </a>
+    <a href="contacts.html">Contact</a>
+    <a href="#">News</a>
+    <a href="#">Help</a>
+    <a href="login.html">Register</a>
+</nav>
+
+<div class="main">
+
+    <ul>
+            <li><a href="page.html">Home</a></li>
+            <li><a href="contacts.html">Contact</a></li> 
+            <li><a href="news.html">News</a></li> 
+            <li><a href="#">History</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="calculator.html">calculator</a></li> 
+          <li><a href="tax.html">Tax</a></li>
+        </ul>
+
+    <div class="content">
+        <h2>Login</h2>
+
+        <form>
+            <input type="text" placeholder="UserID" required>
+            <input type="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

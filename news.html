@@ -11,7 +11,9 @@ body {
     margin: 0;
     font-family: sans-serif;
 }
-
+*{
+	font-size:18px;
+}
 /* TOP MENU */
 .top-nav {
     display: flex;
@@ -39,44 +41,64 @@ body {
 }
 
 /* SIDEBAR */
-.sidebar {
-    width: 200px;
-    height:350px;
-    background-color: #f97316;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  width: 180px;
+  height: 50%;
+  background-color: #f1f1f1;
 }
 
-.sidebar a {
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    text-align: center;
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link and background color on hover */
+li a:hover {
+  background-color: #e7ae44;
+  color: white;
 }
 
 /* CONTENT */
 .content {
     flex: 1;
     padding: 40px;
-    
 }
 
+/* TOOLBAR – very light change only */
 .toolbar {
-  background: #eee;
+  background: #e5e7eb;
   padding: 10px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 button {
   margin: 5px;
   padding: 6px 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
+button:hover {
+  background: #1d4ed8;
+}
+
+.file-center {
+  margin-top: 8px;
+}
+
+/* VIEWER (unchanged) */
 #viewer {
   padding: 10px;
 }
-
 
 .single {
   display: flex;
@@ -85,14 +107,11 @@ button {
   gap: 15px;
 }
 
-
-
 .two {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
-
 
 .grid {
   display: grid;
@@ -105,11 +124,14 @@ canvas {
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
   cursor: pointer;
 }
+.subnav{
+    font-family: "Times New Roman", Times, serif;
+      font-size: 6px;
+}
 </style>
 </head>
 
 <body>
-
 
 <!-- TOP NAV -->
 <nav class="top-nav">
@@ -125,30 +147,36 @@ canvas {
 <div class="main">
 
     <!-- SIDEBAR -->
-    <div class="sidebar">
-        <a href="page.html">Home</a>
-        <a href="contacts.html">Contact</a>
-        <a href="news.html">News</a>
-        <a href="calculator.html">calculator</a>
-        <a href="#">Intrest</a>
-        
-    </div>
+   <ul>
+            <li><a href="page.html">Home</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+            <li><a href="news.html">News</a>
+            <ul class="subnav">
+              <li><a href="#" onclick="singleView()">Scroll View</a></li>
+                <li><a href="#" onclick="twoView()">Dual View</a></li>
+                  <li><a href="#" onclick="gridView()">Thumbnail View</a></li>
+          </ul>
+            </li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="calculator.html">calculator</a></li>
+          <li><a href="tax.html">Tax</a></li>
+        </ul>
 
     <!-- CONTENT -->
-   <div class="content">
-       <div class="toolbar">
-  <button onclick="singleView()">Single Page</button>
-  <button onclick="twoView()">Two Page</button>
-  <button onclick="gridView()">All Pages</button>
-  <input type="file" accept="application/pdf" onchange="loadPDF(this)">
-</div>
+    <div class="content">
 
-<div id="viewer"></div>
+        <div class="toolbar">
+            <div class="file-center">
+                <input type="file" accept="application/pdf" onchange="loadPDF(this)">
+            </div>
+        </div>
+
+        <div id="viewer"></div>
 
 <script>
 let pdf = null;
 let currentPage = 1;
-
 
 function loadPDF(input) {
   const file = input.files[0];
@@ -167,6 +195,7 @@ function clearViewer() {
 }
 
 function renderPage(pageNum, scale = 1.2, clickFn = null) {
+  if (!pdf) return;
   pdf.getPage(pageNum).then(page => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
@@ -185,7 +214,6 @@ function renderPage(pageNum, scale = 1.2, clickFn = null) {
   });
 }
 
-
 function singleView() {
   if (!pdf) return;
   clearViewer();
@@ -196,30 +224,25 @@ function singleView() {
   }
 }
 
-
-
 function twoView() {
   if (!pdf) return;
   clearViewer();
   document.getElementById("viewer").className = "two";
 
-
   if (currentPage > 1) {
     renderPage(currentPage - 1, 1.1, () => {
-      currentPage-=2;
+      currentPage -= 2;
       twoView();
     });
   }
 
-
   if (currentPage <= pdf.numPages) {
     renderPage(currentPage, 1.1, () => {
-      if (currentPage < pdf.numPages) currentPage+=2;
+      if (currentPage < pdf.numPages) currentPage += 2;
       twoView();
     });
   }
 }
-
 
 function gridView() {
   if (!pdf) return;
@@ -247,10 +270,9 @@ function gridView() {
   }
 }
 </script>
+
+    </div>
 </div>
 
-</div>
 </body>
 </html>
-
-
